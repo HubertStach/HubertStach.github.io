@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubert Stach - Portfolio</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Czcionka Google (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ikony FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Hubert Stach<span class="accent">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#about" data-i18n="nav_about">O mnie</a></li>
+            <li><a href="#projects" data-i18n="nav_projects">Projekty</a></li>
+            <li><a href="#experience" data-i18n="nav_exp">Doświadczenie</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
+            <!-- Przycisk zmiany języka -->
+            <li><button id="lang-toggle" class="lang-btn">EN</button></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about" class="fade-in">
+            <div class="container">
+                <h1><span data-i18n="hero_greeting">Cześć, jestem</span> <span class="accent">Hubert Stach</span></h1>
+                <h2 data-i18n="hero_role">Backend Developer & Student AGH</h2>
+                <p class="bio" data-i18n="hero_bio">
+                    Jestem studentem Inżynierii Obliczeniowej na AGH. Na co dzień programuję, a w wolnych chwilach działam w samorządzie studenckim. 
+                    Pasjonują mnie symulacje zjawisk fizycznych. Specjalizuję się w programowaniu w <strong>C/C++</strong> oraz <strong>Javie</strong>.
+                </p>
+                <div class="about-buttons">
+                    <a href="CV.pdf" class="btn btn-primary" download>
+                        <i class="fa-solid fa-download"></i> <span data-i18n="btn_cv">Pobierz CV</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fa-solid fa-envelope"></i> <span data-i18n="btn_contact">Kontakt</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="fade-in">
+            <div class="container">
+                <h3 class="section-title" data-i18n="section_projects">Moje Projekty</h3>
+                
+                <div class="projects-grid">
+                    <!-- Projekt 1: easyFem -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="easyFem.png" alt="Symulacja easyFem" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=easyFem'">
+                        </div>
+                        <div class="project-content">
+                            <h4>easyFem</h4>
+                            <p data-i18n="proj_easyfem_desc">Aplikacja do symulacji nagrzewania materiału metodą elementów skończonych. Umożliwia tworzenie siatki, definiowanie danych materiałowych i warunków brzegowych oraz wizualizację wyników w czasie.</p>
+                            <div class="tech-stack">
+                                <span>C++</span>
+                                <span>CMake</span>
+                                <span>Raylib</span>
+                            </div>
+                            <a href="https://github.com/HubertStach/easyFEM" target="_blank" class="repo-link">
+                                <i class="fa-brands fa-github"></i> <span data-i18n="link_code">Zobacz kod</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Projekt 2: Fire Sim -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="forest_fire.gif" alt="Symulacja pożaru" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Fire+Simulation'">
+                        </div>
+                        <div class="project-content">
+                            <h4 data-i18n="proj_fire_title">Symulacja pożaru lasu</h4>
+                            <p data-i18n="proj_fire_desc">Symulacja oparta o automaty komórkowe. Program wczytuje mapę terenu z pliku PNG i uwzględnia czynniki takie jak kierunek wiatru, wilgotność powietrza oraz ukształtowanie terenu.</p>
+                            <div class="tech-stack">
+                                <span>C++</span>
+                                <span>CMake</span>
+                                <span>Raylib</span>
+                            </div>
+                            <a href="https://github.com/HubertStach/forest_fire_simulation" target="_blank" class="repo-link">
+                                <i class="fa-brands fa-github"></i> <span data-i18n="link_code">Zobacz kod</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Projekt 3: Blog -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="blog.png" alt="Blog app" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Blog+App'">
+                        </div>
+                        <div class="project-content">
+                            <h4>Simple Blog</h4>
+                            <p data-i18n="proj_blog_desc">Platforma blogowa z pełnym uwierzytelnianiem (JWT, Spring Security). Użytkownicy mogą zakładać konta, logować się oraz zarządzać swoimi postami na tablicy głównej.</p>
+                            <div class="tech-stack">
+                                <span>Java</span>
+                                <span>Spring Boot</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <a href="https://github.com/HubertStach/simple_blog" target="_blank" class="repo-link">
+                                <i class="fa-brands fa-github"></i> <span data-i18n="link_code">Zobacz kod</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Projekt 4: Edi -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="" alt="Edi" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Edi'">
+                        </div>
+                        <div class="project-content">
+                            <h4>Edi</h4>
+                            <p data-i18n="proj_edi_desc">Prosty edytor tekstu oparty o terminal, obsługujący podstawowe operacje. Tylko na system Linux.</p>
+                            <div class="tech-stack">
+                                <span>C++</span>
+                            </div>
+                            <a href="https://github.com/HubertStach/edi" target="_blank" class="repo-link">
+                                <i class="fa-brands fa-github"></i> <span data-i18n="link_code">Zobacz kod</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Projekt 5: Fiszki -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="flashcards.gif" alt="Fiszki" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=fiszki'">
+                        </div>
+                        <div class="project-content">
+                            <h4 data-i18n="proj_flash_title">Generator Fiszek</h4>
+                            <p data-i18n="proj_flash_desc">Prosta strona generująca fiszki na podstawie pliku Json. Strona jest hostowana jako github page.</p>
+                            <div class="tech-stack">
+                                <span>Html</span>
+                                <span>CSS</span>
+                                <span>JS</span>
+                            </div>
+                            <a href="https://github.com/HubertStach/fiszki" target="_blank" class="repo-link">
+                                <i class="fa-brands fa-github"></i> <span data-i18n="link_code">Zobacz kod</span>
+                            </a>
+                            <a href="https://hubertstach.github.io/fiszki/" target="_blank" class="repo-link">
+                                <i class="fa-solid fa-rocket"></i> <span data-i18n="link_demo">Przetestuj</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sekcja DOŚWIADCZENIE -->
+        <section id="experience" class="fade-in">
+            <div class="container">
+                <h3 class="section-title" data-i18n="section_exp">Doświadczenie</h3>
+                <div class="timeline">
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date" data-i18n="date_present">2024 - Obecnie</div>
+                        <div class="timeline-content">
+                            <h4 data-i18n="exp_gov_vice">Zastępca Przewodniczącej</h4>
+                            <h5 data-i18n="exp_gov_place">Wydziałowa Rada Samorządu Studentów WIMiIP (AGH)</h5>
+                            <p data-i18n="exp_gov_vice_desc">Zarządzanie zespołem, koordynacja projektów studenckich oraz reprezentowanie studentów w kontaktach z władzami wydziału.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023 - 2024</div>
+                        <div class="timeline-content">
+                            <h4 data-i18n="exp_gov_mem">Członek Samorządu</h4>
+                            <h5 data-i18n="exp_gov_place">Wydziałowa Rada Samorządu Studentów WIMiIP (AGH)</h5>
+                            <p data-i18n="exp_gov_mem_desc">Aktywny udział w organizacji wydarzeń kulturalnych i naukowych dla społeczności akademickiej.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <h4 data-i18n="exp_gls_role">Magazynier</h4>
+                            <h5>GLS</h5>
+                            <p data-i18n="exp_gls_desc">Logistyka i przygotowywanie przesyłek w centrum przeładunkowym. Praca pod presją czasu.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sekcja KONTAKT -->
+        <footer id="contact" class="fade-in">
+            <div class="container">
+                <h3 class="section-title" data-i18n="section_contact">Kontakt</h3>
+                <p data-i18n="contact_cta">Szukasz programisty C++/Java do projektu? Napisz do mnie.</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:hubertstach93@gmail.com" class="contact-item">
+                        <i class="fa-solid fa-envelope"></i> <span data-i18n="contact_email">Napisz e-mail</span>
+                    </a>
+                    <a href="tel:+48537457115" class="contact-item">
+                        <i class="fa-solid fa-phone"></i> +48 537 457 115
+                    </a>
+                    <a href="https://www.linkedin.com/in/hubert-stach-9a3211360/" target="_blank" class="contact-item">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/HubertStach" target="_blank" class="contact-item">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+                
+                <div class="copyright">
+                    &copy; <span id="year"></span> Hubert Stach. <span data-i18n="rights">Wszelkie prawa zastrzeżone.</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

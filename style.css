@@ -1,0 +1,447 @@
+/* Zmienne kolorów */
+:root {
+    --bg-color: #0f172a;        
+    --card-bg: #1e293b;         
+    --text-primary: #f1f5f9;    
+    --text-secondary: #94a3b8;  
+    --accent-color: #38bdf8;    
+    --accent-hover: #0ea5e9;    
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    background-color: rgba(15, 23, 42, 0.95); /* Zwiększone krycie */
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid #334155;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Sekcje ogólne */
+section {
+    padding: 60px 0; /* Zmniejszony padding ogólny */
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* --- POPRAWKA: Sekcja O Mnie --- */
+#about {
+    /* Usunąłem min-height: 80vh, który robił wielką przerwę */
+    padding: 140px 0 60px; /* Większy padding od góry, żeby odsunąć od navbara */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left; /* Zmiana na left wygląda nowocześniej, ale można wrócić do center */
+}
+
+#about .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center; /* Wyśrodkowanie treści */
+}
+
+#about h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+#about h2 {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.accent {
+    color: var(--accent-color);
+}
+
+.bio {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 35px;
+    line-height: 1.8;
+}
+
+.about-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Przyciski */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 50px; /* Bardziej okrągłe */
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #0b1120;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #334155;
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Sekcja Projekty */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    border-color: var(--accent-color);
+}
+
+.project-media {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #334155;
+}
+
+.project-media img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-media img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-content h4 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+}
+
+.project-content p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-stack span {
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.repo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: auto;
+    transition: color 0.2s;
+}
+
+.repo-link:hover {
+    color: var(--accent-color);
+}
+
+/* Sekcja Doświadczenie */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    border-left: 2px solid #334155;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -39px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--bg-color); /* Puste w środku */
+    border: 3px solid var(--accent-color);
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s;
+}
+
+.timeline-item:hover::before {
+    background-color: var(--accent-color);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.timeline-content h4 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.timeline-content h5 {
+    font-weight: 400;
+    color: #cbd5e1;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Footer */
+#contact {
+    background-color: #0b1120;
+    text-align: center;
+    padding: 80px 0 30px;
+    border-top: 1px solid #1e293b;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    padding: 10px 20px;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    background: #0f172a;
+}
+
+.contact-item:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #475569;
+    margin-top: 20px;
+}
+
+/* Animacje */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    #about {
+        padding-top: 120px;
+        text-align: center;
+    }
+
+    #about h1 {
+        font-size: 2.2rem;
+    }
+    
+    .nav-links {
+        display: none; 
+    }
+    
+    .navbar {
+        justify-content: center;
+    }
+
+    .contact-links {
+        gap: 15px;
+    }
+    
+    .contact-item {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ... Reszta stylów bez zmian ... */
+
+/* Przycisk języka */
+.lang-btn {
+    background: transparent;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-primary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.lang-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Dostosowanie nawigacji dla przycisku */
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
