@@ -37,10 +37,10 @@
                 <h2 data-i18n="hero_role">Backend Developer & Student AGH</h2>
                 <p class="bio" data-i18n="hero_bio">
                     Jestem studentem Inżynierii Obliczeniowej na AGH. Na co dzień programuję, a w wolnych chwilach działam w samorządzie studenckim. 
-                    Pasjonują mnie symulacje zjawisk fizycznych. Specjalizuję się w programowaniu w <strong>C/C++</strong> oraz <strong>Javie</strong>.
+                    Pasjonują mnie symulacje zjawisk fizycznych. Programuję głównie w <strong>C/C++</strong>, <strong>Javie</strong> i <strong>Pythonie</strong>.
                 </p>
                 <div class="about-buttons">
-                    <a href="CV.pdf" class="btn btn-primary" download>
+                    <a href="CV_HubertStach.pdf" class="btn btn-primary" download>
                         <i class="fa-solid fa-download"></i> <span data-i18n="btn_cv">Pobierz CV</span>
                     </a>
                     <a href="#contact" class="btn btn-secondary">
@@ -55,20 +55,22 @@
                 <h3 class="section-title" data-i18n="section_projects">Moje Projekty</h3>
                 
                 <div class="projects-grid">
-                    <!-- Projekt 1: easyFem -->
+                    <!-- Projekt 1: FEM Heat Transfer -->
                     <article class="project-card">
                         <div class="project-media">
-                            <img src="easyFem.png" alt="Symulacja easyFem" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=easyFem'">
+                            <img src="easyFem.png" alt="Symulacja FEM" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=easyFem'">
                         </div>
                         <div class="project-content">
-                            <h4>easyFem</h4>
-                            <p data-i18n="proj_easyfem_desc">Aplikacja do symulacji nagrzewania materiału metodą elementów skończonych. Umożliwia tworzenie siatki, definiowanie danych materiałowych i warunków brzegowych oraz wizualizację wyników w czasie.</p>
+                            <h4>FEM Heat Transfer</h4>
+                            <p data-i18n="proj_easyfem_desc">Aplikacja symulująca nieustalone przewodzenie ciepła w 2D metodą elementów skończonych. Własny solver FEM oraz generacja siatki oparta na triangulacji Delaunaya. Obliczenia na bibliotece Eigen, wizualizacja wyników w oknie (ImGui + Raylib), a operacje liczone asynchronicznie, by nie blokować UI.</p>
                             <div class="tech-stack">
                                 <span>C++</span>
-                                <span>CMake</span>
+                                <span>Eigen</span>
                                 <span>Raylib</span>
+                                <span>ImGui</span>
+                                <span>CMake</span>
                             </div>
-                            <a href="https://github.com/HubertStach/easyFEM" target="_blank" class="repo-link">
+                            <a href="https://github.com/HubertStach/EasyHeatTransfer2D" target="_blank" class="repo-link">
                                 <i class="fa-brands fa-github"></i> <span data-i18n="link_code">Zobacz kod</span>
                             </a>
                         </div>
@@ -100,13 +102,33 @@
                         </div>
                         <div class="project-content">
                             <h4>Simple Blog</h4>
-                            <p data-i18n="proj_blog_desc">Platforma blogowa z pełnym uwierzytelnianiem (JWT, Spring Security). Użytkownicy mogą zakładać konta, logować się oraz zarządzać swoimi postami na tablicy głównej.</p>
+                            <p data-i18n="proj_blog_desc">REST API do obsługi postów (CRUD z paginacją i wyszukiwaniem). Rejestracja i logowanie użytkowników z uwierzytelnianiem JWT oraz kontrolą dostępu opartą na rolach (RBAC). Wdrożone przez Docker Compose (PostgreSQL + kontener aplikacji).</p>
                             <div class="tech-stack">
-                                <span>Java</span>
+                                <span>Java 17</span>
                                 <span>Spring Boot</span>
+                                <span>Spring Security</span>
                                 <span>PostgreSQL</span>
+                                <span>Docker</span>
                             </div>
                             <a href="https://github.com/HubertStach/simple_blog" target="_blank" class="repo-link">
+                                <i class="fa-brands fa-github"></i> <span data-i18n="link_code">Zobacz kod</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Projekt: Latex-Flat -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="" alt="Latex-Flat" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Latex-Flat'">
+                        </div>
+                        <div class="project-content">
+                            <h4>Latex-Flat</h4>
+                            <p data-i18n="proj_latexflat_desc">Narzędzie CLI w Pythonie, które spłaszcza wielo­plikowe repozytorium LaTeX do jednego pliku .tex. Opublikowane na PyPI, instalowane przez pip.</p>
+                            <div class="tech-stack">
+                                <span>Python</span>
+                                <span>PyPI</span>
+                            </div>
+                            <a href="https://github.com/HubertStach/latex_flat" target="_blank" class="repo-link">
                                 <i class="fa-brands fa-github"></i> <span data-i18n="link_code">Zobacz kod</span>
                             </a>
                         </div>
@@ -153,9 +175,18 @@
             <div class="container">
                 <h3 class="section-title" data-i18n="section_exp">Doświadczenie</h3>
                 <div class="timeline">
-                    
+
                     <div class="timeline-item">
-                        <div class="timeline-date" data-i18n="date_present">2024 - Obecnie</div>
+                        <div class="timeline-date" data-i18n="date_pega">Lipiec 2026 - Wrzesień 2026</div>
+                        <div class="timeline-content">
+                            <h4 data-i18n="exp_pega_role">Performance & Resilience Engineer (Praktyka)</h4>
+                            <h5>Pegasystems</h5>
+                            <p data-i18n="exp_pega_desc">Praca nad pipeline'ami CI/CD (Jenkins, GitHub Actions) – testowanie i wdrażanie nowych funkcji. Diagnozowanie problemów na poziomie usług oraz wdrożenie narzędzia Speedscale do nagrywania, mockowania i testowania usług.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date" data-i18n="date_present">Czerwiec 2024 - Sierpień 2026</div>
                         <div class="timeline-content">
                             <h4 data-i18n="exp_gov_vice">Zastępca Przewodniczącej</h4>
                             <h5 data-i18n="exp_gov_place">Wydziałowa Rada Samorządu Studentów WIMiIP (AGH)</h5>

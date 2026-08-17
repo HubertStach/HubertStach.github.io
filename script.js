@@ -40,19 +40,21 @@ document.addEventListener("DOMContentLoaded", () => {
             
             hero_greeting: "Cześć, jestem",
             hero_role: "Backend Developer & Student AGH",
-            hero_bio: "Jestem studentem Inżynierii Obliczeniowej na AGH. Na co dzień programuję, a w wolnych chwilach działam w samorządzie studenckim. Pasjonują mnie symulacje zjawisk fizycznych. Specjalizuję się w programowaniu w <strong>C/C++</strong> oraz <strong>Javie</strong>.",
+            hero_bio: "Jestem studentem Inżynierii Obliczeniowej na AGH. Na co dzień programuję, a w wolnych chwilach działam w samorządzie studenckim. Pasjonują mnie symulacje zjawisk fizycznych. Programuję głównie w <strong>C/C++</strong>, <strong>Javie</strong> i <strong>Pythonie</strong>.",
             btn_cv: "Pobierz CV",
             btn_contact: "Kontakt",
             
             section_projects: "Moje Projekty",
             
-            proj_easyfem_desc: "Aplikacja do symulacji nagrzewania materiału metodą elementów skończonych. Umożliwia tworzenie siatki, definiowanie danych materiałowych i warunków brzegowych oraz wizualizację wyników w czasie.",
-            
+            proj_easyfem_desc: "Aplikacja symulująca nieustalone przewodzenie ciepła w 2D metodą elementów skończonych. Własny solver FEM oraz generacja siatki oparta na triangulacji Delaunaya. Obliczenia na bibliotece Eigen, wizualizacja wyników w oknie (ImGui + Raylib), a operacje liczone asynchronicznie, by nie blokować UI.",
+
             proj_fire_title: "Symulacja pożaru lasu",
             proj_fire_desc: "Symulacja oparta o automaty komórkowe. Program wczytuje mapę terenu z pliku PNG i uwzględnia czynniki takie jak kierunek wiatru, wilgotność powietrza oraz ukształtowanie terenu.",
-            
-            proj_blog_desc: "Platforma blogowa z pełnym uwierzytelnianiem (JWT, Spring Security). Użytkownicy mogą zakładać konta, logować się oraz zarządzać swoimi postami na tablicy głównej.",
-            
+
+            proj_blog_desc: "REST API do obsługi postów (CRUD z paginacją i wyszukiwaniem). Rejestracja i logowanie użytkowników z uwierzytelnianiem JWT oraz kontrolą dostępu opartą na rolach (RBAC). Wdrożone przez Docker Compose (PostgreSQL + kontener aplikacji).",
+
+            proj_latexflat_desc: "Narzędzie CLI w Pythonie, które spłaszcza wieloplikowe repozytorium LaTeX do jednego pliku .tex. Opublikowane na PyPI, instalowane przez pip.",
+
             proj_edi_desc: "Prosty edytor tekstu oparty o terminal, obsługujący podstawowe operacje. Tylko na system Linux.",
             
             proj_flash_title: "Generator Fiszek",
@@ -63,7 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
             
             section_exp: "Doświadczenie",
             date_present: "2024 - Obecnie",
-            
+            date_pega: "Lipiec 2026 - Wrzesień 2026",
+
+            exp_pega_role: "Performance & Resilience Engineer (Praktyka)",
+            exp_pega_desc: "Praca nad pipeline'ami CI/CD (Jenkins, GitHub Actions) – testowanie i wdrażanie nowych funkcji. Diagnozowanie problemów na poziomie usług oraz wdrożenie narzędzia Speedscale do nagrywania, mockowania i testowania usług.",
+
             exp_gov_vice: "Zastępca Przewodniczącej",
             exp_gov_place: "Wydziałowa Rada Samorządu Studentów WIMiIP (AGH)",
             exp_gov_vice_desc: "Zarządzanie zespołem, koordynacja projektów studenckich oraz reprezentowanie studentów w kontaktach z władzami wydziału.",
@@ -87,19 +93,21 @@ document.addEventListener("DOMContentLoaded", () => {
             
             hero_greeting: "Hi, I'm",
             hero_role: "Backend Developer & AGH Student",
-            hero_bio: "I am a Computational Engineering student at AGH University. I program daily, and in my free time, I am active in the student government. I am passionate about physical simulations. I specialize in <strong>C/C++</strong> and <strong>Java</strong>.",
+            hero_bio: "I am a Computational Engineering student at AGH University. I program daily, and in my free time, I am active in the student government. I am passionate about physical simulations. I mainly program in <strong>C/C++</strong>, <strong>Java</strong> and <strong>Python</strong>.",
             btn_cv: "Download CV",
             btn_contact: "Contact me",
             
             section_projects: "My Projects",
             
-            proj_easyfem_desc: "Application for simulating material heating using the finite element method. It allows mesh creation, defining material data and boundary conditions, and visualizing results over time.",
-            
+            proj_easyfem_desc: "Application simulating transient 2D heat conduction using the finite element method. Custom FEM solver and mesh generation based on Delaunay triangulation. Linear algebra powered by Eigen, in-window result visualization (ImGui + Raylib), with computations run asynchronously so the UI stays responsive.",
+
             proj_fire_title: "Forest Fire Simulation",
             proj_fire_desc: "Simulation based on cellular automata. The program loads a terrain map from a PNG file and considers factors such as wind direction, air humidity, and terrain topography.",
-            
-            proj_blog_desc: "Blog platform with full authentication (JWT, Spring Security). Users can create accounts, log in, and manage their posts on the main dashboard.",
-            
+
+            proj_blog_desc: "REST API handling CRUD operations for posts, including pagination and search. User management with JWT authentication and role-based access control (RBAC). Deployed via Docker Compose (PostgreSQL + application container).",
+
+            proj_latexflat_desc: "A Python CLI tool that flattens a multi-file LaTeX repository into a single .tex file. Published on PyPI, installable via pip.",
+
             proj_edi_desc: "Simple terminal-based text editor supporting basic operations. Linux only.",
             
             proj_flash_title: "Flashcards Generator",
@@ -109,11 +117,15 @@ document.addEventListener("DOMContentLoaded", () => {
             link_demo: "Live Demo",
             
             section_exp: "Experience",
-            date_present: "2024 - Present",
-            
-            exp_gov_vice: "Deputy Chair",
-            exp_gov_place: "Faculty Student Government Council WIMiIP (AGH)",
-            exp_gov_vice_desc: "Team management, coordination of student projects, and representing students in contacts with faculty authorities.",
+            date_present: "June 2024 - August 2026",
+            date_pega: "July 2026 - September 2026",
+
+            exp_pega_role: "Performance & Resilience Engineer Intern",
+            exp_pega_desc: "Worked on CI/CD pipelines (Jenkins, GitHub Actions) – testing and implementing new features. Investigated and troubleshot service-level issues, and helped adopt Speedscale for recording, mocking and testing services.",
+
+            exp_gov_vice: "Vice President",
+            exp_gov_place: "WIMiIP Student Government, AGH University",
+            exp_gov_vice_desc: "Leading a team of 20 people, running biweekly meetings and handling conflict resolution. Organized large-scale events: the 56th and 57th \"Metallurgist Rally\" (120–180 participants) and an orienteering race, coordinating logistics and teams under deadlines.",
             
             exp_gov_mem: "Council Member",
             exp_gov_mem_desc: "Active participation in organizing cultural and scientific events for the academic community.",
