@@ -31,34 +31,81 @@
     </nav>
 
     <main>
-        <section id="about" class="fade-in">
-            <div class="container">
-                <h1><span data-i18n="hero_greeting">Cześć, jestem</span> <span class="accent">Hubert Stach</span></h1>
-                <h2 data-i18n="hero_role">Backend Developer & Student AGH</h2>
-                <p class="bio" data-i18n="hero_bio">
-                    Jestem studentem Inżynierii Obliczeniowej na AGH. Na co dzień programuję, a w wolnych chwilach działam w samorządzie studenckim. 
-                    Pasjonują mnie symulacje zjawisk fizycznych. Programuję głównie w <strong>C/C++</strong>, <strong>Javie</strong> i <strong>Pythonie</strong>.
-                </p>
-                <div class="about-buttons">
-                    <a href="CV_HubertStach.pdf" class="btn btn-primary" download>
-                        <i class="fa-solid fa-download"></i> <span data-i18n="btn_cv">Pobierz CV</span>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fa-solid fa-envelope"></i> <span data-i18n="btn_contact">Kontakt</span>
-                    </a>
+        <section id="about">
+            <div class="container about-grid">
+                <img src="images/image.png" alt="Hubert Stach" class="about-photo">
+                <div class="about-text">
+                    <h1><span data-i18n="hero_greeting">Cześć, jestem</span> <span class="accent">Hubert Stach</span></h1>
+                    <h2 data-i18n="hero_role">Backend Developer & Student AGH</h2>
+                    <p class="bio" data-i18n="hero_bio">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                    </p>
+                    <div class="about-buttons">
+                        <a href="CV_HubertStach.pdf" class="btn btn-primary" download>
+                            <i class="fa-solid fa-download"></i> <span data-i18n="btn_cv">Pobierz CV</span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fa-solid fa-envelope"></i> <span data-i18n="btn_contact">Kontakt</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="fade-in">
-            <div class="container">
+        <div class="container content-grid">
+        <section id="projects">
+            <div>
                 <h3 class="section-title" data-i18n="section_projects">Moje Projekty</h3>
                 
                 <div class="projects-grid">
+                    <!-- Projekt: apart-look -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="" alt="apart-look" onerror="this.src='https://placehold.co/600x400/e6f4ea/166534?text=apart-look'">
+                        </div>
+                        <div class="project-content">
+                            <h4>apart-look</h4>
+                            <p data-i18n="proj_apartlook_desc">Aplikacja webowa do wyszukiwania mieszkań na wynajem. Scrapuje ogłoszenia z OLX i Otodom, przepuszcza je przez łańcuch filtrów (pipeline) i lokalny model AI (Ollama), a dopasowane oferty ocenia i pokazuje w dwupanelowym interfejsie. Odrzucone oferty zachowują powód odrzucenia, więc widać pełny audyt wyszukiwania.</p>
+                            <div class="tech-stack">
+                                <span>TypeScript</span>
+                                <span>Next.js</span>
+                                <span>tRPC</span>
+                                <span>Prisma</span>
+                                <span>Ollama</span>
+                                <span>Tailwind</span>
+                            </div>
+                            <a href="https://github.com/HubertStach/apart-look" target="_blank" class="repo-link">
+                                <i class="fa-brands fa-github"></i> <span data-i18n="link_code">Zobacz kod</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Projekt: language-app -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="" alt="language-app" onerror="this.src='https://placehold.co/600x400/e6f4ea/166534?text=language-app'">
+                        </div>
+                        <div class="project-content">
+                            <h4>language-app</h4>
+                            <p data-i18n="proj_langapp_desc">Aplikacja do nauki języków: fiszki, talie, quizy i sesje powtórek wraz z panelem administracyjnym do zarządzania słowami, taliami i tagami. Konta użytkowników oparte o NextAuth, dane w PostgreSQL przez Prisma, uruchamiane przez Docker Compose.</p>
+                            <div class="tech-stack">
+                                <span>TypeScript</span>
+                                <span>Next.js</span>
+                                <span>NextAuth</span>
+                                <span>Prisma</span>
+                                <span>PostgreSQL</span>
+                                <span>Docker</span>
+                            </div>
+                            <a href="https://github.com/HubertStach/language_app" target="_blank" class="repo-link">
+                                <i class="fa-brands fa-github"></i> <span data-i18n="link_code">Zobacz kod</span>
+                            </a>
+                        </div>
+                    </article>
+
                     <!-- Projekt 1: FEM Heat Transfer -->
                     <article class="project-card">
                         <div class="project-media">
-                            <img src="easyFem.png" alt="Symulacja FEM" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=easyFem'">
+                            <img src="images/easyFem.png" alt="Symulacja FEM" onerror="this.src='https://placehold.co/600x400/e6f4ea/166534?text=easyFem'">
                         </div>
                         <div class="project-content">
                             <h4>FEM Heat Transfer</h4>
@@ -79,7 +126,7 @@
                     <!-- Projekt 2: Fire Sim -->
                     <article class="project-card">
                         <div class="project-media">
-                            <img src="forest_fire.gif" alt="Symulacja pożaru" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Fire+Simulation'">
+                            <img src="images/forest_fire.gif" alt="Symulacja pożaru" onerror="this.src='https://placehold.co/600x400/e6f4ea/166534?text=Fire+Simulation'">
                         </div>
                         <div class="project-content">
                             <h4 data-i18n="proj_fire_title">Symulacja pożaru lasu</h4>
@@ -98,7 +145,7 @@
                     <!-- Projekt 3: Blog -->
                     <article class="project-card">
                         <div class="project-media">
-                            <img src="blog.png" alt="Blog app" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Blog+App'">
+                            <img src="images/blog.png" alt="Blog app" onerror="this.src='https://placehold.co/600x400/e6f4ea/166534?text=Blog+App'">
                         </div>
                         <div class="project-content">
                             <h4>Simple Blog</h4>
@@ -119,7 +166,7 @@
                     <!-- Projekt: Latex-Flat -->
                     <article class="project-card">
                         <div class="project-media">
-                            <img src="" alt="Latex-Flat" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Latex-Flat'">
+                            <img src="" alt="Latex-Flat" onerror="this.src='https://placehold.co/600x400/e6f4ea/166534?text=Latex-Flat'">
                         </div>
                         <div class="project-content">
                             <h4>Latex-Flat</h4>
@@ -137,7 +184,7 @@
                     <!-- Projekt 4: Edi -->
                     <article class="project-card">
                         <div class="project-media">
-                            <img src="" alt="Edi" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Edi'">
+                            <img src="" alt="Edi" onerror="this.src='https://placehold.co/600x400/e6f4ea/166534?text=Edi'">
                         </div>
                         <div class="project-content">
                             <h4>Edi</h4>
@@ -151,28 +198,13 @@
                         </div>
                     </article>
 
-                    <!-- Projekt 5: Fiszki -->
-                    <article class="project-card">
-                        <div class="project-media">
-                            <img src="flashcards.gif" alt="Fiszki" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=fiszki'">
-                        </div>
-                        <div class="project-content">
-                            <h4 data-i18n="proj_flash_title">Generator Fiszek</h4>
-                            <p data-i18n="proj_flash_desc">Prosta strona generująca fiszki na podstawie pliku Json.</p>
-                            <div class="tech-stack">
-                                <span>Html</span>
-                                <span>CSS</span>
-                                <span>JS</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+               </div>
             </div>
         </section>
 
         <!-- Sekcja DOŚWIADCZENIE -->
-        <section id="experience" class="fade-in">
-            <div class="container">
+        <section id="experience">
+            <div>
                 <h3 class="section-title" data-i18n="section_exp">Doświadczenie</h3>
                 <div class="timeline">
 
@@ -215,9 +247,10 @@
                 </div>
             </div>
         </section>
+        </div>
 
         <!-- Sekcja KONTAKT -->
-        <footer id="contact" class="fade-in">
+        <footer id="contact">
             <div class="container">
                 <h3 class="section-title" data-i18n="section_contact">Kontakt</h3>
                 <p data-i18n="contact_cta">Szukasz programisty C++/Java do projektu? Napisz do mnie.</p>

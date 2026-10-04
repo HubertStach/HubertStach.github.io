@@ -1,35 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Aktualizacja roku w stopce
-    const yearSpan = document.getElementById("year");
-    if(yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
-
-    // 2. Animacja pojawiania się sekcji (Intersection Observer)
-    const observerOptions = {
-        root: null, // viewport
-        rootMargin: '0px',
-        threshold: 0.1 // element musi być w 10% widoczny, żeby odpalić animację
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Animuj tylko raz
-            }
-        });
-    }, observerOptions);
-
-    const sections = document.querySelectorAll('.fade-in');
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    
     // --- 1. TŁUMACZENIA (DICTIONARY) ---
     const translations = {
         pl: {
@@ -40,12 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
             
             hero_greeting: "Cześć, jestem",
             hero_role: "Backend Developer & Student AGH",
-            hero_bio: "Jestem studentem Inżynierii Obliczeniowej na AGH. Na co dzień programuję, a w wolnych chwilach działam w samorządzie studenckim. Pasjonują mnie symulacje zjawisk fizycznych. Programuję głównie w <strong>C/C++</strong>, <strong>Javie</strong> i <strong>Pythonie</strong>.",
+            hero_bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
             btn_cv: "Pobierz CV",
             btn_contact: "Kontakt",
             
             section_projects: "Moje Projekty",
             
+            proj_apartlook_desc: "Aplikacja webowa do wyszukiwania mieszkań na wynajem. Scrapuje ogłoszenia z OLX i Otodom, przepuszcza je przez łańcuch filtrów (pipeline) i lokalny model AI (Ollama), a dopasowane oferty ocenia i pokazuje w dwupanelowym interfejsie. Odrzucone oferty zachowują powód odrzucenia, więc widać pełny audyt wyszukiwania.",
+
+            proj_langapp_desc: "Aplikacja do nauki języków: fiszki, talie, quizy i sesje powtórek wraz z panelem administracyjnym do zarządzania słowami, taliami i tagami. Konta użytkowników oparte o NextAuth, dane w PostgreSQL przez Prisma, uruchamiane przez Docker Compose.",
+
             proj_easyfem_desc: "Aplikacja symulująca nieustalone przewodzenie ciepła w 2D metodą elementów skończonych. Własny solver FEM oraz generacja siatki oparta na triangulacji Delaunaya. Obliczenia na bibliotece Eigen, wizualizacja wyników w oknie (ImGui + Raylib), a operacje liczone asynchronicznie, by nie blokować UI.",
 
             proj_fire_title: "Symulacja pożaru lasu",
@@ -57,8 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             proj_edi_desc: "Prosty edytor tekstu oparty o terminal, obsługujący podstawowe operacje. Tylko na system Linux.",
             
-            proj_flash_title: "Generator Fiszek",
-            proj_flash_desc: "Prosta strona generująca fiszki na podstawie pliku Json. Strona jest hostowana jako github page.",
             
             link_code: "Zobacz kod",
             link_demo: "Przetestuj",
@@ -93,12 +65,16 @@ document.addEventListener("DOMContentLoaded", () => {
             
             hero_greeting: "Hi, I'm",
             hero_role: "Backend Developer & AGH Student",
-            hero_bio: "I am a Computational Engineering student at AGH University. I program daily, and in my free time, I am active in the student government. I am passionate about physical simulations. I mainly program in <strong>C/C++</strong>, <strong>Java</strong> and <strong>Python</strong>.",
+            hero_bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
             btn_cv: "Download CV",
             btn_contact: "Contact me",
             
             section_projects: "My Projects",
             
+            proj_apartlook_desc: "Web app for finding apartments to rent. It scrapes listings from OLX and Otodom, runs them through a pipeline of filters and a local AI model (Ollama), then scores the matches and shows them in a two-panel interface. Rejected listings keep their rejection reason, so the whole search stays auditable.",
+
+            proj_langapp_desc: "Language learning app: flashcards, decks, quizzes and study sessions, plus an admin panel for managing words, decks and tags. User accounts via NextAuth, data in PostgreSQL through Prisma, run with Docker Compose.",
+
             proj_easyfem_desc: "Application simulating transient 2D heat conduction using the finite element method. Custom FEM solver and mesh generation based on Delaunay triangulation. Linear algebra powered by Eigen, in-window result visualization (ImGui + Raylib), with computations run asynchronously so the UI stays responsive.",
 
             proj_fire_title: "Forest Fire Simulation",
@@ -110,8 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             proj_edi_desc: "Simple terminal-based text editor supporting basic operations. Linux only.",
             
-            proj_flash_title: "Flashcards Generator",
-            proj_flash_desc: "Simple website generating flashcards based on a JSON file. Hosted as a GitHub Page.",
             
             link_code: "View Code",
             link_demo: "Live Demo",
@@ -169,29 +143,10 @@ document.addEventListener("DOMContentLoaded", () => {
         updateTexts(currentLang);
     });
 
-    // --- 3. RESZTA LOGIKI (ROK, SCROLL) ---
+    // --- 3. ROK W STOPCE ---
     const yearSpan = document.getElementById("year");
     if(yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    const sections = document.querySelectorAll('.fade-in');
-    sections.forEach(section => {
-        observer.observe(section);
-    });
 });

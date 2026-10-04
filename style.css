@@ -1,12 +1,13 @@
 /* Zmienne kolorów */
 :root {
-    --bg-color: #0f172a;        
-    --card-bg: #1e293b;         
-    --text-primary: #f1f5f9;    
-    --text-secondary: #94a3b8;  
-    --accent-color: #38bdf8;    
-    --accent-hover: #0ea5e9;    
-    --border-radius: 12px;
+    --bg-color: #ffffff;
+    --card-bg: #f7faf8;
+    --text-primary: #11271b;
+    --text-secondary: #4b6357;
+    --accent-color: #16a34a;
+    --accent-hover: #15803d;
+    --border-color: #d7e5dc;
+    --border-radius: 0;
     --transition: all 0.3s ease;
 }
 
@@ -34,7 +35,7 @@ ul {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -47,10 +48,10 @@ ul {
     padding: 15px 40px;
     position: sticky;
     top: 0;
-    background-color: rgba(15, 23, 42, 0.95); /* Zwiększone krycie */
+    background-color: rgba(255, 255, 255, 0.92); /* Zwiększone krycie */
     backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid #334155;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .logo {
@@ -95,34 +96,41 @@ section {
     height: 4px;
     background-color: var(--accent-color);
     margin: 15px auto 0;
-    border-radius: 2px;
 }
 
 /* --- POPRAWKA: Sekcja O Mnie --- */
 #about {
     /* Usunąłem min-height: 80vh, który robił wielką przerwę */
-    padding: 140px 0 60px; /* Większy padding od góry, żeby odsunąć od navbara */
+    padding: 112px 0 48px; /* Większy padding od góry, żeby odsunąć od navbara */
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left; /* Zmiana na left wygląda nowocześniej, ale można wrócić do center */
 }
 
-#about .container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center; /* Wyśrodkowanie treści */
+.about-grid {
+    display: grid;
+    grid-template-columns: 208px 1fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.about-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
 }
 
 #about h1 {
-    font-size: 3rem;
+    font-size: 2.4rem;
     line-height: 1.2;
     margin-bottom: 15px;
     font-weight: 800;
 }
 
 #about h2 {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: var(--accent-color);
     font-weight: 500;
     margin-bottom: 25px;
@@ -135,16 +143,17 @@ section {
 }
 
 .bio {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    max-width: 70ch;
     color: var(--text-secondary);
-    margin-bottom: 35px;
+    margin-bottom: 28px;
     line-height: 1.8;
 }
 
 .about-buttons {
     display: flex;
     gap: 15px;
-    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Przyciski */
@@ -153,7 +162,6 @@ section {
     align-items: center;
     gap: 8px;
     padding: 12px 28px;
-    border-radius: 50px; /* Bardziej okrągłe */
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
@@ -163,18 +171,18 @@ section {
 
 .btn-primary {
     background-color: var(--accent-color);
-    color: #0b1120;
+    color: #ffffff;
 }
 
 .btn-primary:hover {
     background-color: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 5px 15px rgba(22, 163, 74, 0.25);
 }
 
 .btn-secondary {
     background-color: transparent;
-    border: 2px solid #334155;
+    border: 2px solid var(--border-color);
     color: var(--text-primary);
 }
 
@@ -183,10 +191,23 @@ section {
     color: var(--accent-color);
 }
 
+/* Panel: projekty + doświadczenie obok siebie */
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.content-grid > section {
+    padding: 60px 0;
+    min-width: 0;
+}
+
 /* Sekcja Projekty */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
 
@@ -195,21 +216,21 @@ section {
     border-radius: var(--border-radius);
     overflow: hidden;
     transition: var(--transition);
-    border: 1px solid #334155;
+    border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 20px rgba(17, 39, 27, 0.08);
     border-color: var(--accent-color);
 }
 
 .project-media {
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid #334155;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .project-media img {
@@ -251,12 +272,11 @@ section {
 }
 
 .tech-stack span {
-    background-color: rgba(56, 189, 248, 0.1);
+    background-color: rgba(22, 163, 74, 0.12);
     color: var(--accent-color);
     font-size: 0.75rem;
     font-weight: 600;
     padding: 5px 12px;
-    border-radius: 20px;
 }
 
 .repo-link {
@@ -276,10 +296,8 @@ section {
 
 /* Sekcja Doświadczenie */
 .timeline {
-    max-width: 800px;
-    margin: 0 auto;
     position: relative;
-    border-left: 2px solid #334155;
+    border-left: 2px solid var(--border-color);
     padding-left: 30px;
 }
 
@@ -295,7 +313,7 @@ section {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -39px;
+    left: -42px;
     top: 5px;
     width: 16px;
     height: 16px;
@@ -326,7 +344,7 @@ section {
 
 .timeline-content h5 {
     font-weight: 400;
-    color: #cbd5e1;
+    color: var(--text-secondary);
     margin-bottom: 12px;
     font-size: 1rem;
     font-style: italic;
@@ -339,10 +357,10 @@ section {
 
 /* Footer */
 #contact {
-    background-color: #0b1120;
+    background-color: #f1f7f3;
     text-align: center;
     padding: 80px 0 30px;
-    border-top: 1px solid #1e293b;
+    border-top: 1px solid var(--border-color);
 }
 
 .contact-links {
@@ -361,9 +379,8 @@ section {
     color: var(--text-secondary);
     transition: var(--transition);
     padding: 10px 20px;
-    border: 1px solid #1e293b;
-    border-radius: 8px;
-    background: #0f172a;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
 }
 
 .contact-item:hover {
@@ -374,27 +391,41 @@ section {
 
 .copyright {
     font-size: 0.8rem;
-    color: #475569;
+    color: #7d9488;
     margin-top: 20px;
 }
 
-/* Animacje */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* Responsywność */
+@media (max-width: 1200px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     #about {
         padding-top: 120px;
         text-align: center;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .about-photo {
+        max-width: 176px;
+    }
+
+    .about-buttons {
+        justify-content: center;
     }
 
     #about h1 {
@@ -427,7 +458,6 @@ section {
     border: 1px solid var(--text-secondary);
     color: var(--text-primary);
     padding: 6px 12px;
-    border-radius: 6px;
     cursor: pointer;
     font-family: inherit;
     font-weight: 600;
