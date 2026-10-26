@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             hero_greeting: "Cześć, jestem",
             hero_role: "Backend Developer & Student AGH",
-            hero_bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+            hero_bio: "Cześć, mam na imię Hubert Stach. Studiuję inżynierię obliczeniową na AGH, a poza studiami programuję i biegam. Piszę w C++ i TypeScripcie, dbając o czysty, wydajny kod i dobre praktyki inżynierskie, a dodatkowo mam doświadczenie DevOpsowe (GitHub Actions, Jenkins), więc rozumiem cały cykl życia oprogramowania, od commitu po produkcję.",
             btn_cv: "Pobierz CV",
             btn_contact: "Kontakt",
             
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             date_present: "2024 - Obecnie",
             date_pega: "Lipiec 2026 - Wrzesień 2026",
 
-            exp_pega_role: "Performance & Resilience Engineer (Praktyka)",
+            exp_pega_role: "Performance & Resilience Engineer (Staż)",
             exp_pega_desc: "Praca nad pipeline'ami CI/CD (Jenkins, GitHub Actions) – testowanie i wdrażanie nowych funkcji. Diagnozowanie problemów na poziomie usług oraz wdrożenie narzędzia Speedscale do nagrywania, mockowania i testowania usług.",
 
             exp_gov_vice: "Zastępca Przewodniczącej",
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             hero_greeting: "Hi, I'm",
             hero_role: "Backend Developer & AGH Student",
-            hero_bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+            hero_bio: "Hi, I'm Hubert Stach. I study Computational Engineering at AGH, and outside of classes I code and run. I write C++ and TypeScript with a focus on clean, performant code and solid engineering practices, and I also bring DevOps experience (GitHub Actions, Jenkins), so I understand the full software lifecycle, from commit to production.",
             btn_cv: "Download CV",
             btn_contact: "Contact me",
             
